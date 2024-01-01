@@ -1,30 +1,33 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './layout.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { LayoutComponent } from "./layout.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: LayoutComponent,
     children: [
       {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'dashboard',
+        path: "",
+        pathMatch: "full",
+        redirectTo: "dashboard",
       },
       {
-        path: 'dashboard',
+        path: "dashboard",
         loadChildren: () =>
-          import('../dashboard/dashboard.module').then(
+          import("../dashboard/dashboard.module").then(
             (module) => module.DashboardModule
           ),
       },
-      // {
-      //   path: 'utilities',
-      //   loadChildren: () => import('../utilities/utilities.module').then((module) => module.UtilitiesModule),
-      //   canActivate: [AuthorizeGuard],
-      //   data: { permissions: [Permissions.utilitiesRead] }
-      // },
+      {
+        path: "services",
+        loadChildren: () =>
+          import("../services/services.module").then(
+            (module) => module.ServicesModule
+          ),
+        // canActivate: [AuthorizeGuard],
+        // data: { permissions: [Permissions.utilitiesRead] }
+      },
       // {
       //   path: 'roles',
       //   loadChildren: () => import('../roles/roles.module').then((module) => module.RolesModule),

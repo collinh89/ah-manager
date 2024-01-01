@@ -1,5 +1,24 @@
 <mat-sidenav-container fullscreen>
-  <mat-sidenav mode="side" #sidenav position="start"></mat-sidenav>
+  <mat-sidenav mode="side" #sidenav position="start">
+    <img
+      mat-card-image
+      src="../../assets/AH_logo-removebg.png"
+      style="width: 150px"
+      alt="AH"
+    />
+    <mat-divider></mat-divider>
+    <button class="sidenav-btn" mat-button color="primary" routerLink="/">
+      Dashboard
+    </button>
+    <button
+      class="sidenav-btn"
+      mat-button
+      color="primary"
+      routerLink="/services"
+    >
+      Services
+    </button>
+  </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="accent">
       <button mat-icon-button (click)="sidenav.toggle()">
