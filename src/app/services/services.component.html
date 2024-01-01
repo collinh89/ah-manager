@@ -1,1 +1,8 @@
-<p>services works!</p>
+<mat-grid-list style="margin-bottom: 5%" cols="3">
+  <mat-grid-tile *ngFor="let service of services">
+    <app-service-card
+      [service]="service"
+      class="service-card"
+    ></app-service-card>
+  </mat-grid-tile>
+</mat-grid-list>
