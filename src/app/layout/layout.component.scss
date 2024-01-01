@@ -1,0 +1,14 @@
+@use "@angular/material" as mat;
+mat-sidenav {
+  width: 200px;
+  padding: 15px;
+}
+.mat-drawer {
+  background-color: lightblue;
+}
+.main-content {
+  padding: 20px;
+}
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
